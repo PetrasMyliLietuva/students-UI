@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./Card.style";
-import checkmark from "../../assets/checkmark.svg";
+import checkmarkAct from "../../assets/checkmarkActive.svg";
 
 let activeUser = [];
 
@@ -14,7 +14,7 @@ function removeStud(id) {
   console.log(activeUser);
 }
 
-function Card({ children, id }) {
+function Card({ id }) {
   const [display, setDisplay] = useState(0);
 
   return (
@@ -30,8 +30,8 @@ function Card({ children, id }) {
         }
       }}
     >
-      Vardenis Pavardenis {children}
-      <S.Img src={checkmark}></S.Img>
+      <S.Title>Name Surname Name Surname</S.Title>
+      <S.Img active={display} src={display && checkmarkAct} />
     </S.CardItem>
   );
 }
