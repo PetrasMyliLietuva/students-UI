@@ -13,7 +13,7 @@ function Routes() {
       <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={HomeLazy}></Route>
-          <Route exact path="/about" component={AboutLazy}></Route>
+          <Route exact path="/view" component={AboutLazy}></Route>
         </Switch>
       </Suspense>
     </Router>
