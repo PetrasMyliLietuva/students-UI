@@ -11,7 +11,7 @@ export const CardItem = styled.div`
   object-fit: cover;
   cursor: pointer;
   box-sizing: border-box;
-  border-color: ${(props) => (props.active == 1 ? "#f9db6d" : "#464d77")};
+  border-color: ${(props) => (props.active === 1 ? "#f9db6d" : "#464d77")};
 `;
 
 export const Img = styled.img`

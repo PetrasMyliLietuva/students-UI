@@ -4,8 +4,8 @@ import Card from "./Card";
 
 storiesOf("Card", module).add("Card Item", () => (
   <>
-    <Card />
+    <Card id="1" />
 
-    <Card />
+    <Card id="2" />
   </>
 ));

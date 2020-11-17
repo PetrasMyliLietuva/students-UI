@@ -2,14 +2,33 @@ import React, { useState } from "react";
 import * as S from "./Card.style";
 import checkmark from "../../assets/checkmark.svg";
 
-function Card({ children }) {
+let activeUser = [];
+
+function insertStud(id) {
+  activeUser.push({ id: id });
+  console.log(activeUser);
+}
+
+function removeStud(id) {
+  activeUser = activeUser.filter((x) => x.id !== id);
+  console.log(activeUser);
+}
+
+function Card({ children, id }) {
   const [display, setDisplay] = useState(0);
 
   return (
     <S.CardItem
       active={display}
-      onClick={() => setDisplay(1)}
-      onMouseUp={() => setDisplay(0)}
+      onClick={() => {
+        if (!display) {
+          setDisplay(1);
+          insertStud(id);
+        } else {
+          setDisplay(0);
+          removeStud(id);
+        }
+      }}
     >
       Vardenis Pavardenis {children}
       <S.Img src={checkmark}></S.Img>
