@@ -8,6 +8,7 @@ import theme from "./theme";
 const GlobalStyle = createGlobalStyle`
   body {
     background: ${(props) => props.theme.palette.lightBrown};
+    font-family: 'Open Sans', sans-serif;
   }
 `;
 
