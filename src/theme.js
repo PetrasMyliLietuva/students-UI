@@ -7,11 +7,18 @@ const theme = {
     },
   },
   secondary: {
-    bacground: "#eeeeee",
+    background: "#eeeeee",
     color: "#000000",
     hover: {
       background: "#c5c5c5",
     },
+  },
+  palette: {
+    blue: "#464d77",
+    green: "#36827f",
+    yellow: "#f9db6d",
+    lightBrown: "#f4eded",
+    darkBrown: "#877666",
   },
 };
 
