@@ -1,17 +1,23 @@
 import React from "react";
-import { Button, Section } from "../../components/";
+import { Section, Card } from "../../components/";
+import * as S from "./Home.style";
 
 function Home() {
   return (
-    <>
-      <Section background="eee">Welcome to the React boilerplate</Section>
-      <Section>
-        This is the Home page with a button:
-        <Button color="primary" handleClick={() => alert("Hi")}>
-          Click me
-        </Button>
-      </Section>
-    </>
+    <Section>
+      <S.Heading>Mark Your attendance</S.Heading>
+      <S.Wrapper>
+        <S.MarginBlock>
+          <Card />
+        </S.MarginBlock>
+        <S.MarginBlock>
+          <Card />
+        </S.MarginBlock>
+        <S.MarginBlock>
+          <Card />
+        </S.MarginBlock>
+      </S.Wrapper>
+    </Section>
   );
 }
 
