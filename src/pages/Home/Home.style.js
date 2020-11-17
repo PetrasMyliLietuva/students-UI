@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin: 0 auto;
+  text-align: center;
   max-width: 500px;
-  min-height: 1500px;
 `;
 
 export const Heading = styled.h1`
@@ -14,4 +14,7 @@ export const Heading = styled.h1`
 
 export const MarginBlock = styled.div`
   margin-bottom: 5px;
+  &&:last-of-type {
+    margin-bottom: 40px;
+  }
 `;

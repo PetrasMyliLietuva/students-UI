@@ -1,5 +1,5 @@
 import React from "react";
-import { Section, Card } from "../../components/";
+import { Button, Card, Section } from "../../components/";
 import * as S from "./Home.style";
 
 function Home() {
@@ -16,6 +16,13 @@ function Home() {
         <S.MarginBlock>
           <Card />
         </S.MarginBlock>
+        <Button
+          color="mainPalette"
+          type="submit"
+          handleClick={() => console.log("You've clicked")}
+        >
+          Submit
+        </Button>
       </S.Wrapper>
     </Section>
   );
