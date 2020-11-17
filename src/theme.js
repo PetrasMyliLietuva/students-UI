@@ -18,7 +18,7 @@ const theme = {
     green: "#36827f",
     yellow: "#f9db6d",
     lightBrown: "#f4eded",
-    darlBrown: "#877666",
+    darkBrown: "#877666",
   },
 };
 
