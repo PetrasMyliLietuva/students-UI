@@ -11,11 +11,12 @@ export const CardItem = styled.div`
   color: ${(props) => props.theme.primary.color};
   text-align: center;
   background: ${(props) => props.theme.palette.green};
-  border: 2px solid;
+  border: 1.5px solid;
   border-radius: 50px;
   object-fit: cover;
   cursor: pointer;
   box-sizing: border-box;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   border-color: ${(props) =>
     props.active === 1 ? props.theme.palette.yellow : props.theme.palette.blue};
 `;
@@ -29,4 +30,5 @@ export const Img = styled.img`
 
 export const Title = styled.h3`
   flex: 1;
+  font-weight: 100;
 `;
