@@ -29,4 +29,5 @@ export const Img = styled.img`
 
 export const Title = styled.h3`
   flex: 1;
+  font-weight: 200;
 `;
