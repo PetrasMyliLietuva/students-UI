@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import * as S from "./Card.style";
 import checkmarkAct from "../../assets/checkmarkActive.svg";
 
-let activeUser = [];
-
-function insertStud(id) {
-  activeUser.push({ id: id });
-  console.log(activeUser);
-}
-
-function removeStud(id) {
-  activeUser = activeUser.filter((x) => x.id !== id);
-  console.log(activeUser);
-}
-
-function Card({ id }) {
+function Card({ id, name, surname, callback }) {
   const [display, setDisplay] = useState(0);
+
+  let activeUser = [];
+
+  function insertStud(id) {
+    activeUser.push({ id: id });
+    console.log(activeUser);
+  }
+
+  function removeStud(id) {
+    activeUser = activeUser.filter((x) => x.id !== id);
+    console.log(activeUser);
+  }
 
   return (
     <S.CardItem
@@ -28,9 +28,10 @@ function Card({ id }) {
           setDisplay(0);
           removeStud(id);
         }
+        callback(id);
       }}
     >
-      <S.Title>Name Surname Name Surname</S.Title>
+      <S.Title>{name + " " + surname}</S.Title>
       <S.Img active={display} src={display && checkmarkAct} />
     </S.CardItem>
   );
