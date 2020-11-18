@@ -5,6 +5,8 @@ import * as S from "./Home.style";
 function Home(id) {
   const [students, setStudents] = useState([]);
 
+  let activeUser = [];
+
   useEffect(() => {
     fetch("http://127.0.0.1:8080/students")
       .then((res) => res.json())
@@ -21,7 +23,12 @@ function Home(id) {
               name={x.name}
               surname={x.surname}
               id={x.id}
-              handleclick={(e) => console.log("ho")}
+              callback={() => {
+                activeUser.find((y) => y === x.id)
+                  ? (activeUser = activeUser.filter((z) => z !== x.id))
+                  : activeUser.push(x.id);
+                console.log(activeUser);
+              }}
             />
           </S.MarginBlock>
         ))}
@@ -30,7 +37,6 @@ function Home(id) {
           color="mainPalette"
           type="submit"
           // handleClick={() => console.log("yay")}
-          callback={(id) => console.log(id)}
         >
           Submit
         </Button>
