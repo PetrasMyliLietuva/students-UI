@@ -17,15 +17,17 @@ function About() {
         },
         body: JSON.stringify({ id: id, pass: value }),
       })
-        .then((data) =>
-          data.status === 200
-            ? setError("The attendance was deleted.") &&
-              setStudentsList(studentsList.filter((x) => x.id !== id)) &&
-              console.log(studentsList)
-            : setError(
-                `Delete was not accepted because of this error: ${data.statusText}`
-              )
-        )
+        .then((data) => {
+          if (data.status === 200) {
+            setError("The attendance was deleted.");
+            setStudentsList(studentsList.filter((x) => x.id !== id));
+            console.log(studentsList);
+          } else {
+            setError(
+              `Delete was not accepted because of this error: ${data.statusText}`
+            );
+          }
+        })
         .catch((err) => setError(err));
     } else {
       setError(null);
