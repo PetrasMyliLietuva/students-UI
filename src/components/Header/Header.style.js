@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Header = styled.header`
-  background: #${(props) => props.theme.palette.yellow};
+  background: ${(props) => props.theme.palette.blue};
   padding: 20px;
   box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.5);
   position: relative;
@@ -23,13 +23,15 @@ export const Actions = styled.nav`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  transition: 0.3s ease-in-out;
-  color: ${(props) => props.theme.palette.blue};
+  color: #ffffff;
 
   &:not(:last-child) {
     margin-right: 15px;
   }
   &:hover {
-    color: #000;
+    text-decoration: underline;
+  }
+  &:focus {
+    text-decoration: underline;
   }
 `;

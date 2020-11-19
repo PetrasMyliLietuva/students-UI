@@ -23,6 +23,7 @@ function Add() {
 
   return (
     <Section>
+      <S.Heading>Add new Student</S.Heading>
       <form
         onSubmit={(e) => {
           e.preventDefault();

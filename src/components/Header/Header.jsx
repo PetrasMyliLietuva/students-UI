@@ -1,9 +1,9 @@
 import React from "react";
 import * as S from "./Header.style";
 
-function Header({ background }) {
+function Header() {
   return (
-    <S.Header background={background}>
+    <S.Header>
       <S.ActionsWrapper>
         <S.Actions>
           <S.StyledLink to="/">Register</S.StyledLink>

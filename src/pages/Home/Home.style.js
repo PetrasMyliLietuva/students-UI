@@ -13,7 +13,7 @@ export const Heading = styled.h1`
 `;
 
 export const MarginBlock = styled.div`
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   &&:last-of-type {
     margin-bottom: 40px;
   }

@@ -18,3 +18,7 @@ export const MarginBlock = styled.div`
     margin-bottom: 40px;
   }
 `;
+
+export const BtnWrapper = styled.div`
+  margin-left: 10px;
+`;

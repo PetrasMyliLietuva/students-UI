@@ -53,9 +53,14 @@ function About() {
               <Card name={x.name} surname={x.surname} id={x.id} />
             </div>
             <div style={{ width: "20%", display: "inline-block" }}>
-              <Button handleClick={(e) => DeleteAttendance(x.id)}>
-                Delete
-              </Button>
+              <S.BtnWrapper>
+                <Button
+                  handleClick={(e) => DeleteAttendance(x.id)}
+                  color="secondaryPalette"
+                >
+                  Delete
+                </Button>
+              </S.BtnWrapper>
             </div>
           </S.MarginBlock>
         ))}
