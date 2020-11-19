@@ -11,9 +11,11 @@ export const Button = styled.button`
       : props.theme.secondary.color};
 
   background: ${(props) =>
-    props.color === "mainPalette" && props.theme.palette.blue};
+    (props.color === "mainPalette" && props.theme.palette.blue) ||
+    (props.color === "secondaryPalette" && props.theme.palette.darkBrown)};
   color: ${(props) =>
-    props.color === "mainPalette" && props.theme.palette.lightBrown};
+    (props.color === "mainPalette" && props.theme.palette.lightBrown) ||
+    (props.color === "secondaryPalette" && props.theme.palette.lightBrown)};
   border: none;
   outline: none;
   padding: 10px 20px;
@@ -27,7 +29,8 @@ export const Button = styled.button`
         ? props.theme.primary.hover.background
         : props.theme.secondary.hover.background};
     background: ${(props) =>
-      props.color === "mainPalette" && props.theme.palette.darkBrown};
+      (props.color === "mainPalette" && props.theme.palette.darkBrown) ||
+      (props.color === "secondaryPalette" && props.theme.palette.blue)};
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 `;
