@@ -2,8 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Section } from "../../components/";
 import * as S from "./Home.style";
 
-function Home(id) {
+function Register(studentid, date) {
+  fetch("http://127.0.0.1:8080/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: Number(studentid), date: date }),
+  });
+}
+
+function Home() {
   const [students, setStudents] = useState([]);
+  const [studentId, setStudentId] = useState(null);
 
   useEffect(() => {
     fetch("http://127.0.0.1:8080/students")
@@ -14,27 +25,31 @@ function Home(id) {
   return (
     <Section>
       <S.Heading>Mark Your attendance</S.Heading>
-      <S.Wrapper>
-        {students.map((x) => (
-          <S.MarginBlock key={x.id}>
-            <Card
-              name={x.name}
-              surname={x.surname}
-              id={x.id}
-              handleclick={(e) => console.log("ho")}
-            />
-          </S.MarginBlock>
-        ))}
-
-        <Button
-          color="mainPalette"
-          type="submit"
-          // handleClick={() => console.log("yay")}
-          callback={(id) => console.log(id)}
-        >
-          Submit
-        </Button>
-      </S.Wrapper>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          Register(studentId, new Date());
+        }}
+      >
+        <S.Wrapper>
+          {students.map((x) => (
+            <S.MarginBlock key={x.id}>
+              <Card
+                name={x.name}
+                surname={x.surname}
+                id={x.id}
+                handleChange={(e) => {
+                  setStudentId(e.target.value);
+                  console.log(e.target.value);
+                }}
+              />
+            </S.MarginBlock>
+          ))}
+          <Button color="mainPalette" type="submit">
+            Submit
+          </Button>
+        </S.Wrapper>
+      </form>
     </Section>
   );
 }

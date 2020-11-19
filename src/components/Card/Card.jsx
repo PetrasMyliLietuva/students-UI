@@ -1,39 +1,26 @@
 import React, { useState } from "react";
 import * as S from "./Card.style";
-import checkmarkAct from "../../assets/checkmarkActive.svg";
+// import checkmarkAct from "../../assets/checkmarkActive.svg";
 
-function Card({ id, name, surname, callback }) {
-  const [display, setDisplay] = useState(0);
-
-  let activeUser = [];
-
-  function insertStud(id) {
-    activeUser.push({ id: id });
-    console.log(activeUser);
-  }
-
-  function removeStud(id) {
-    activeUser = activeUser.filter((x) => x.id !== id);
-    console.log(activeUser);
-  }
+function Card({ id, name, surname, handleChange }) {
+  const [display, setDisplay] = useState(false);
 
   return (
-    <S.CardItem
-      active={display}
-      onClick={() => {
-        if (!display) {
-          setDisplay(1);
-          insertStud(id);
-        } else {
-          setDisplay(0);
-          removeStud(id);
-        }
-        callback(id);
-      }}
-    >
-      <S.Title>{name + " " + surname}</S.Title>
-      <S.Img active={display} src={display && checkmarkAct} />
-    </S.CardItem>
+    <S.Wrapper active={display}>
+      <S.Label htmlFor={id}>
+        {name} {surname}
+      </S.Label>
+      <S.RadioButton
+        id={id}
+        type="radio"
+        name="student"
+        value={id}
+        onChange={handleChange}
+        active={display}
+        onFocus={() => setDisplay(true)}
+        onBlur={() => setDisplay(false)}
+      />
+    </S.Wrapper>
   );
 }
 
