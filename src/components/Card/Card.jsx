@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as S from "./Card.style";
-// import checkmarkAct from "../../assets/checkmarkActive.svg";
 
 function Card({ id, name, surname, handleChange }) {
   const [display, setDisplay] = useState(false);
@@ -16,9 +15,7 @@ function Card({ id, name, surname, handleChange }) {
         name="student"
         value={id}
         onChange={handleChange}
-        active={display}
-        onFocus={() => setDisplay(true)}
-        onBlur={() => setDisplay(false)}
+        onFocus={() => setDisplay(1)} //todo: onFocus event not working
       />
     </S.Wrapper>
   );
