@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import checkmarkAct from "../../assets/checkmarkActive.svg";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,20 +7,18 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   max-height: 50px;
-  padding: 15px 40px;
+  padding: 10px 40px;
   color: ${(props) => props.theme.primary.color};
   text-align: center;
   background: ${(props) => props.theme.palette.green};
   border: 1.5px solid;
-  border-radius: 50px;
+  border-radius: 3px;
   object-fit: cover;
   cursor: pointer;
   box-sizing: border-box;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
   border-color: ${(props) =>
-    props.active === true
-      ? props.theme.palette.yellow
-      : props.theme.palette.blue};
+    props.active ? props.theme.palette.yellow : props.theme.palette.blue};
 `;
 
 export const Label = styled.label`
@@ -30,21 +29,16 @@ export const Label = styled.label`
 
 export const RadioButton = styled.input`
   visibility: hidden;
-  width: 20px;
-  height: 20px;
-  background: ${(props) => props.theme.palette.yellow};
 
-  &&:checked:after {
+  &&:checked::after {
+    content: "";
+    position: relative;
+    bottom: 3px;
     width: 20px;
     height: 20px;
-    border-radius: 15px;
-    top: -1px;
-    left: -1px;
-    position: relative;
-    background: ${(props) => props.theme.palette.yellow};
-    content: "";
+    background: url(${checkmarkAct});
+    background-size: cover;
     display: inline-block;
     visibility: visible;
-    border: 2px solid ${(props) => props.theme.palette.lightBrown};
   }
 `;
