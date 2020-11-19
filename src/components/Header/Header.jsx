@@ -8,6 +8,7 @@ function Header({ background }) {
         <S.Actions>
           <S.StyledLink to="/">Register</S.StyledLink>
           <S.StyledLink to="/view">View</S.StyledLink>
+          <S.StyledLink to="/add">Add</S.StyledLink>
         </S.Actions>
       </S.ActionsWrapper>
     </S.Header>
