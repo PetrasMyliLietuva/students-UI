@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import checkmarkAct from "../../assets/checkmarkActive.svg";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,7 +7,8 @@ export const Wrapper = styled.div`
   width: 100%;
   max-height: 50px;
   padding: 10px 40px;
-  color: ${(props) => props.theme.primary.color};
+  color: ${(props) =>
+    props.active ? props.theme.palette.yellow : props.theme.primary.color};
   text-align: center;
   background: ${(props) => props.theme.palette.green};
   border: 1.5px solid;
@@ -28,17 +28,14 @@ export const Label = styled.label`
 `;
 
 export const RadioButton = styled.input`
-  visibility: hidden;
-
-  &&:checked::after {
-    content: "";
-    position: relative;
-    bottom: 3px;
-    width: 20px;
-    height: 20px;
-    background: url(${checkmarkAct});
-    background-size: cover;
-    display: inline-block;
-    visibility: visible;
+  opacity: 0;
   }
+`;
+
+export const RadioImg = styled.img`
+  position: relative;
+  bottom: 3px;
+  width: 20px;
+  height: 20px;
+  opacity: ${(props) => (props.active ? 100 : 0)};
 `;
